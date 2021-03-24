@@ -1,0 +1,207 @@
+Algoritmo "semnome"
+// Disciplina   : [Linguagem e Lógica de Programação]
+// Professor   : Antonio Carlos Nicolodi 
+// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Autor(a)    : Nome do(a) aluno(a)
+// Data atual  : 24/03/2021
+Var
+   A, B, C: real
+   ope:caracter
+procedimento calcular
+inicio
+   escolha ope
+         caso "1"
+            C <- A + B
+         caso "2"
+            C <- A - B
+         caso "3"
+            C <- A * B
+      fimescolha
+fimprocedimento
+
+Inicio
+
+escreva("Informe a operação: (1 Somar, 2 Subtrair, 3 Multiplicar )")
+   leia(ope)
+
+
+    caso 1
+A: vetor[0..4, 0..4] de inteiro
+B: vetor[0..4, 0..4] de inteiro
+C: vetor[0..4, 0..4] de inteiro
+linha, coluna : inteiro
+
+
+
+para linha de 0 ate 4 faca
+  para coluna de 0 ate 4 faca
+Escreval ("Digite os valores: ")
+      leia (A[coluna,linha])
+fimpara
+fimpara
+para linha de 0 ate 4 faca
+  para coluna de 0 ate 4 faca
+Escreval ("Digite os valores: ")
+      leia (B[coluna, linha])
+fimpara
+fimpara
+
+para linha de 0 ate 4 faca
+para coluna de 0 ate 4 faca
+
+C[linha,coluna] <- A[linha,coluna] + B[linha,coluna]
+
+fimpara
+fimpara
+
+      escreval("Conteúdo da matriz A:")
+para linha de 0 ate 4 faca
+   para coluna de 0 ate 4 faca
+      se coluna < 4 entao
+         escreva (A[linha,coluna])
+      senao
+         escreval (A[linha,coluna])
+      fimse
+   fimpara
+fimpara
+escreval("Conteúdo da matriz B:")
+para linha de 0 ate 4 faca
+   para coluna de 0 ate 4 faca
+      se coluna < 4 entao
+         escreva (B[linha,coluna])
+      senao
+         escreval (B[linha,coluna])
+      fimse
+   fimpara
+fimpara
+escreval("A soma das matrizes A e B é:")
+para linha de 0 ate 4 faca
+   para coluna de 0 ate 4 faca
+      se coluna < 4 entao
+         escreva (C[linha,coluna])
+      senao
+         escreval (C[linha,coluna])
+      fimse
+   fimpara
+fimpara
+
+caso 2
+A: vetor[0..5, 0..5] de real
+B: vetor[0..5, 0..5] de real
+C: vetor[0..5, 0..5] de real
+linha, coluna : inteiro
+
+Inicio
+para linha de 0 ate 5 faca
+  para coluna de 0 ate 5 faca
+Escreval ("Digite os valores: ")
+      leia (A[coluna,linha])
+fimpara
+fimpara
+para linha de 0 ate 5 faca
+  para coluna de 0 ate 5 faca
+Escreval ("Digite os valores: ")
+      leia (B[coluna, linha])
+fimpara
+fimpara
+
+para linha de 0 ate 5 faca
+para coluna de 0 ate 5 faca
+
+C[linha,coluna] <- A[linha,coluna] - B[linha,coluna]
+
+fimpara
+fimpara
+
+      escreval("Conteúdo da matriz A:")
+para linha de 0 ate 5 faca
+   para coluna de 0 ate 5 faca
+      se coluna < 5 entao
+         escreva (A[linha,coluna])
+      senao
+         escreval (A[linha,coluna])
+      fimse
+   fimpara
+fimpara
+escreval("Conteúdo da matriz B:")
+para linha de 0 ate 5 faca
+   para coluna de 0 ate 5 faca
+      se coluna < 5 entao
+         escreva (B[linha,coluna])
+      senao
+         escreval (B[linha,coluna])
+      fimse
+   fimpara
+fimpara
+escreval("A subtração das matrizes A e B é:")
+para linha de 0 ate 5 faca
+   para coluna de 0 ate 5 faca
+      se coluna < 5 entao
+         escreva (C[linha,coluna])
+      senao
+         escreval (C[linha,coluna])
+      fimse
+   fimpara
+fimpara
+
+caso 3
+A: vetor[0..2, 0..2] de inteiro
+B: vetor[0..2, 0..2] de inteiro
+C: vetor[0..2, 0..2] de inteiro
+linha, coluna : inteiro
+para linha de 0 ate 2 faca
+  para coluna de 0 ate 2 faca
+Escreval ("Digite os valores: ")
+      leia (A[coluna,linha])
+fimpara
+fimpara
+para linha de 0 ate 2 faca
+  para coluna de 0 ate 2 faca
+Escreval ("Digite os valores: ")
+      leia (B[coluna, linha])
+fimpara
+fimpara
+
+para linha de 0 ate 2 faca
+para coluna de 0 ate 2 faca
+
+C[linha,coluna] <- A[linha,coluna] * B[linha,coluna]
+
+fimpara
+fimpara
+
+      escreval("Conteúdo da matriz A:")
+para linha de 0 ate 2 faca
+   para coluna de 0 ate 2 faca
+      se coluna < 2 entao
+         escreva (A[linha,coluna])
+      senao
+         escreval (A[linha,coluna])
+      fimse
+   fimpara
+fimpara
+escreval("Conteúdo da matriz B:")
+para linha de 0 ate 2 faca
+   para coluna de 0 ate 2 faca
+      se coluna < 2 entao
+         escreva (B[linha,coluna])
+      senao
+         escreval (B[linha,coluna])
+      fimse
+   fimpara
+fimpara
+escreval("A multiplicação das matrizes A e B é:")
+para linha de 0 ate 2 faca
+   para coluna de 0 ate 2 faca
+      se coluna < 2 entao
+         escreva (C[linha,coluna])
+      senao
+         escreval (C[linha,coluna])
+      fimse
+   fimpara
+fimpara
+
+
+
+
+Fimalgoritmo
