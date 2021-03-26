@@ -1,205 +1,389 @@
-Algoritmo "semnome"
+Algoritmo "AG7"
 // Disciplina   : [Linguagem e Lógica de Programação]
-// Professor   : Antonio Carlos Nicolodi 
-// Descrição   : Aqui você descreve o que o programa faz! (função)
-// Autor(a)    : Nome do(a) aluno(a)
-// Data atual  : 24/03/2021
+// Professor   : Valmir Assis
+// Descrição   : Calculos de matrizes
+// Autor(a)    : Alex Sander de Oliveira Barcelos
+// Data atual  : 26/03/2021
 Var
-   A, B, C: real
-   ope:caracter
-procedimento calcular
+   ope:inteiro
+   op:logico
+   continua:caractere
+   somaA: vetor[0..4, 0..4] de inteiro  // Matriz A da opção SOMAR
+   somaB: vetor[0..4, 0..4] de inteiro  // Matriz B da opção SOMAR
+   somaAB: vetor[0..4, 0..4] de inteiro // Matriz Resultante da opção SOMAR
+   subA: vetor[0..5, 0..5] de inteiro   // Matriz A da opção Subtrair
+   subANum: vetor[0..5, 0..5] de inteiro // Matriz Resultante da opção Subtrair
+   multA: vetor[0..2, 0..2] de inteiro  // Matriz A da opção Multiplicar
+   multB: vetor[0..2, 0..2] de inteiro // Matriz B da opção Multiplicar
+   multAB: vetor[0..2, 0..2] de inteiro // Matriz Resultante da opção Multiplicar
+   transpostaA: vetor[0..4, 0..4] de inteiro // Matriz da opção SOMAR Transposta
+   transpostaB: vetor[0..5, 0..5] de inteiro // Matriz da opção Subtrair Transposta
+   transpostaC: vetor[0..2, 0..2] de inteiro // Matriz da opção Dividir Transposta
+   linha, coluna,num : inteiro
+   SomaDPA:inteiro  // soma dos valores da diagonal principal da matriz ADIÇÃO
+   SomaDPS:inteiro  // soma dos valores da diagonal principal da matriz SUBTRAÇÃO
+   SomaDPD:inteiro  // soma dos valores da diagonal principal da matriz DIVISÃO
+   SomaDPT:inteiro // soma dos valores de todas as diagonais principaies
+
 inicio
-   escolha ope
-         caso "1"
-            C <- A + B
-         caso "2"
-            C <- A - B
-         caso "3"
-            C <- A * B
-      fimescolha
-fimprocedimento
+   SomaDPA <-0
+   SomaDPS <-0
+   SomaDPD <-0
+   op <- verdadeiro
 
-Inicio
+   enquanto op = verdadeiro faca
 
-escreva("Informe a operação: (1 Somar, 2 Subtrair, 3 Multiplicar )")
-   leia(ope)
-
-
-    caso 1
-A: vetor[0..4, 0..4] de inteiro
-B: vetor[0..4, 0..4] de inteiro
-C: vetor[0..4, 0..4] de inteiro
-linha, coluna : inteiro
+      escreval("Menu")
+      escreval("")
+      escreval("1 - Somar")
+      escreval("2 - Subtrair")
+      escreval("3 - Multiplicar")
+      escreval("4 - Transposta")
+      escreval("5 - Diagonal Principal")
+      escreval("6 - Sair do progama")
+      escreval("")
+      escreval("Digite a opção desejada")
 
 
 
-para linha de 0 ate 4 faca
-  para coluna de 0 ate 4 faca
-Escreval ("Digite os valores: ")
-      leia (A[coluna,linha])
-fimpara
-fimpara
-para linha de 0 ate 4 faca
-  para coluna de 0 ate 4 faca
-Escreval ("Digite os valores: ")
-      leia (B[coluna, linha])
-fimpara
-fimpara
+      leia(ope)
+      escolha(ope)
 
-para linha de 0 ate 4 faca
-para coluna de 0 ate 4 faca
 
-C[linha,coluna] <- A[linha,coluna] + B[linha,coluna]
+      caso 1
+         //inicio da soma
+         limpatela
+         Escreval ("Digite os valores para a Matriz A: ")
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
+               leia (somaA[coluna,linha])
+            fimpara
+         fimpara
+         Escreval ("Digite os valores para a Matriz B: ")
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
+               leia (somaB[coluna, linha])
+            fimpara
+         fimpara
 
-fimpara
-fimpara
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
 
-      escreval("Conteúdo da matriz A:")
-para linha de 0 ate 4 faca
-   para coluna de 0 ate 4 faca
-      se coluna < 4 entao
-         escreva (A[linha,coluna])
-      senao
-         escreval (A[linha,coluna])
-      fimse
-   fimpara
-fimpara
-escreval("Conteúdo da matriz B:")
-para linha de 0 ate 4 faca
-   para coluna de 0 ate 4 faca
-      se coluna < 4 entao
-         escreva (B[linha,coluna])
-      senao
-         escreval (B[linha,coluna])
-      fimse
-   fimpara
-fimpara
-escreval("A soma das matrizes A e B é:")
-para linha de 0 ate 4 faca
-   para coluna de 0 ate 4 faca
-      se coluna < 4 entao
-         escreva (C[linha,coluna])
-      senao
-         escreval (C[linha,coluna])
-      fimse
-   fimpara
-fimpara
+               somaAB[linha,coluna] <- somaA[linha,coluna] + somaB[linha,coluna]
 
-caso 2
-A: vetor[0..5, 0..5] de real
-B: vetor[0..5, 0..5] de real
-C: vetor[0..5, 0..5] de real
-linha, coluna : inteiro
+            fimpara
+         fimpara
 
-Inicio
-para linha de 0 ate 5 faca
-  para coluna de 0 ate 5 faca
-Escreval ("Digite os valores: ")
-      leia (A[coluna,linha])
-fimpara
-fimpara
-para linha de 0 ate 5 faca
-  para coluna de 0 ate 5 faca
-Escreval ("Digite os valores: ")
-      leia (B[coluna, linha])
-fimpara
-fimpara
+         escreval("Conteúdo da matriz A:")
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
+               se coluna < 4 entao
+                  escreva (somaA[linha,coluna])
+               senao
+                  escreval (somaA[linha,coluna])
+               fimse
+            fimpara
+         fimpara
+         escreval("Conteúdo da matriz B:")
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
+               se coluna < 4 entao
+                  escreva (somaB[linha,coluna])
+               senao
+                  escreval (somaB[linha,coluna])
+               fimse
+            fimpara
+         fimpara
+         escreval("A soma das matrizes A e B é:")
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
+               se coluna < 4 entao
+                  escreva (somaAB[linha,coluna])
+               senao
+                  escreval (somaAB[linha,coluna])
+               fimse
+            fimpara
+         fimpara
 
-para linha de 0 ate 5 faca
-para coluna de 0 ate 5 faca
 
-C[linha,coluna] <- A[linha,coluna] - B[linha,coluna]
+         //fim da soma
+      caso 2
+         //inicio da subtração
+         limpatela
+         escreval("Digite o numero a ser subtraido")
+         leia(num)
+         Escreval ("Digite os valores da Matriz: ")
+         para linha de 0 ate 5 faca
+            para coluna de 0 ate 5 faca
+               leia (subA[coluna,linha])
+            fimpara
+         fimpara
 
-fimpara
-fimpara
+         para linha de 0 ate 5 faca
+            para coluna de 0 ate 5 faca
+               subANum[linha,coluna] <- subA[linha,coluna] - num
+            fimpara
+         fimpara
 
-      escreval("Conteúdo da matriz A:")
-para linha de 0 ate 5 faca
-   para coluna de 0 ate 5 faca
-      se coluna < 5 entao
-         escreva (A[linha,coluna])
-      senao
-         escreval (A[linha,coluna])
-      fimse
-   fimpara
-fimpara
-escreval("Conteúdo da matriz B:")
-para linha de 0 ate 5 faca
-   para coluna de 0 ate 5 faca
-      se coluna < 5 entao
-         escreva (B[linha,coluna])
-      senao
-         escreval (B[linha,coluna])
-      fimse
-   fimpara
-fimpara
-escreval("A subtração das matrizes A e B é:")
-para linha de 0 ate 5 faca
-   para coluna de 0 ate 5 faca
-      se coluna < 5 entao
-         escreva (C[linha,coluna])
-      senao
-         escreval (C[linha,coluna])
-      fimse
-   fimpara
-fimpara
 
-caso 3
-A: vetor[0..2, 0..2] de inteiro
-B: vetor[0..2, 0..2] de inteiro
-C: vetor[0..2, 0..2] de inteiro
-linha, coluna : inteiro
-para linha de 0 ate 2 faca
-  para coluna de 0 ate 2 faca
-Escreval ("Digite os valores: ")
-      leia (A[coluna,linha])
-fimpara
-fimpara
-para linha de 0 ate 2 faca
-  para coluna de 0 ate 2 faca
-Escreval ("Digite os valores: ")
-      leia (B[coluna, linha])
-fimpara
-fimpara
+         escreval("Conteúdo da matriz A:")
+         para linha de 0 ate 5 faca
+            para coluna de 0 ate 5 faca
+               se coluna < 5 entao
+                  escreva(subA[linha,coluna])
+               senao
+                  escreval(subA[linha,coluna])
+               fimse
+            fimpara
+         fimpara
 
-para linha de 0 ate 2 faca
-para coluna de 0 ate 2 faca
 
-C[linha,coluna] <- A[linha,coluna] * B[linha,coluna]
+         escreval("A subtração do número ", num , " com a matriz A é:")
+         para linha de 0 ate 5 faca
+            para coluna de 0 ate 5 faca
+               se coluna < 5 entao
+                  escreva(subANum[linha,coluna])
+               senao
+                  escreval(subANum[linha,coluna])
+               fimse
+            fimpara
+         fimpara
+         //fim da subtração
 
-fimpara
-fimpara
+      caso 3
+         //inicio da multiplicação
+         limpatela
+         Escreval ("Digite os valores da Matriz A: ")
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+               leia (multA[coluna,linha])
+            fimpara
+         fimpara
+         Escreval ("Digite os valores da Matriz B: ")
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+               leia (multB[coluna, linha])
+            fimpara
+         fimpara
 
-      escreval("Conteúdo da matriz A:")
-para linha de 0 ate 2 faca
-   para coluna de 0 ate 2 faca
-      se coluna < 2 entao
-         escreva (A[linha,coluna])
-      senao
-         escreval (A[linha,coluna])
-      fimse
-   fimpara
-fimpara
-escreval("Conteúdo da matriz B:")
-para linha de 0 ate 2 faca
-   para coluna de 0 ate 2 faca
-      se coluna < 2 entao
-         escreva (B[linha,coluna])
-      senao
-         escreval (B[linha,coluna])
-      fimse
-   fimpara
-fimpara
-escreval("A multiplicação das matrizes A e B é:")
-para linha de 0 ate 2 faca
-   para coluna de 0 ate 2 faca
-      se coluna < 2 entao
-         escreva (C[linha,coluna])
-      senao
-         escreval (C[linha,coluna])
-      fimse
-   fimpara
-fimpara
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+
+               multAB[linha,coluna] <- multA[linha,coluna] * multB[linha,coluna]
+
+            fimpara
+         fimpara
+
+         escreval("Conteúdo da matriz A:")
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+               se coluna < 2 entao
+                  escreva (multA[linha,coluna])
+               senao
+                  escreval (multA[linha,coluna])
+               fimse
+            fimpara
+         fimpara
+         escreval("Conteúdo da matriz B:")
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+               se coluna < 2 entao
+                  escreva (multB[linha,coluna])
+               senao
+                  escreval (multB[linha,coluna])
+               fimse
+            fimpara
+         fimpara
+         escreval("A multiplicação das matrizes A e B é:")
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+               se coluna < 2 entao
+                  escreva (multAB[linha,coluna])
+               senao
+                  escreval (multAB[linha,coluna])
+               fimse
+            fimpara
+         fimpara
+         //fim da multiplicação
+
+      caso 4
+         //matriz transposta da somaAB
+         limpatela
+         escreval ("Matriz recebida da Adição")
+         para linha de 0 ate 4 passo 1 faca
+            para coluna de 0 ate 4 passo 1 faca
+               escreva (somaAB[linha,coluna])
+            fimpara
+            escreval
+         fimpara
+
+         escreval ("Transposta da Matriz somaAB(Adição)")
+         para coluna de 0 ate 4 passo 1 faca
+            para linha de 0 ate 4 passo 1 faca
+               transpostaA[coluna,linha] <- somaAB[linha,coluna]
+               escreva(transpostaA[coluna,linha])
+            fimpara
+            escreval
+         fimpara
+         // matriz transposta da subANum
+         escreval ("Matriz recebida da Subtração ")
+         para linha de 0 ate 5 passo 1 faca
+            para coluna de 0 ate 5 passo 1 faca
+               escreva (subANum[linha,coluna])
+            fimpara
+            escreval
+         fimpara
+
+         escreval ("Transposta da Matriz subANum(Subtração)")
+         para coluna de 0 ate 5 passo 1 faca
+            para linha de 0 ate 5 passo 1 faca
+               transpostaB[coluna,linha] <- subANum[linha,coluna]
+               escreva(transpostaB[coluna,linha])
+            fimpara
+            escreval
+         fimpara
+
+         // matriz transposta da multAB
+         escreval ("Matriz recebida da Multiplicação ")
+         para linha de 0 ate 2 passo 1 faca
+            para coluna de 0 ate 2 passo 1 faca
+               escreva (multAB[linha,coluna])
+            fimpara
+            escreval
+         fimpara
+
+         escreval ("Transposta da Matriz multAB (Multiplicação)")
+         para coluna de 0 ate 2 passo 1 faca
+            para linha de 0 ate 2 passo 1 faca
+               transpostaC[coluna,linha] <- multAB[linha,coluna]
+               escreva(transpostaC[coluna,linha])
+            fimpara
+            escreval
+         fimpara
+
+      caso 5
+
+         limpatela
+         // diagonal principal da somaAB
+         escreval ("Matriz recebida da Adição")
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
+               escreva (somaAB[linha,coluna])
+            fimpara
+            escreval ()
+         fimpara
+
+         escreval()
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
+               se (linha=coluna) entao
+                  escreva (somaAB[linha,coluna])
+               fimse
+            fimpara
+            escreval()
+         fimpara
+
+         //diagonal principal da subANum
+
+         escreval ("Matriz recebida da Subtração")
+         para linha de 0 ate 5 faca
+            para coluna de 0 ate 5 faca
+               escreva (subANum[linha,coluna])
+            fimpara
+            escreval ()
+         fimpara
+
+         escreval()
+         para linha de 0 ate 5 faca
+            para coluna de 0 ate 5 faca
+               se (linha=coluna) entao
+                  escreva (subANum[linha,coluna])
+
+               fimse
+            fimpara
+            escreval()
+         fimpara
+
+         //diagonal principal da multAB
+
+         escreval ("Matriz recebida da Multiplicação")
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+               escreva (multAB[linha,coluna])
+            fimpara
+            escreval ()
+         fimpara
+         escreval()
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+               se (linha=coluna) entao
+                  escreva ("A principal diagonal é : ", multAB[linha,coluna])
+
+               fimse
+            fimpara
+            escreval()
+         fimpara
+
+         //****************************SOMA DAS PRINCIPAIS***************************
+
+
+
+         para linha de 0 ate 4 faca
+            para coluna de 0 ate 4 faca
+               se (linha=coluna) entao
+                  SomaDPA <- somaAB[linha,coluna] + SomaDPA
+               fimse
+            fimpara
+         fimpara
+         escreval("A soma dos elementos da diagonal principal da Adição (1) é : ", SomaDPA)
+         //**************************************************************************
+         para linha de 0 ate 5 faca
+            para coluna de 0 ate 5 faca
+               se (linha=coluna) entao
+                  SomaDPS <- subANum[linha,coluna] + SomaDPS
+               fimse
+            fimpara
+         fimpara
+         escreval("A soma dos elementos da diagonal principal da Subtração (2) é : ", SomaDPS)
+         //*****************************************************************************
+         para linha de 0 ate 2 faca
+            para coluna de 0 ate 2 faca
+               se (linha=coluna) entao
+                  SomaDPD <- multAB[linha,coluna] + SomaDPD
+               fimse
+            fimpara
+         fimpara
+         escreval("A soma dos elementos da diagonal principal da multiplicação (3) é : ", SomaDPD)
+
+         //****************************************************************************
+         SomaDPT <- SomaDPA + SomaDPS + SomaDPD
+         escreval("A soma de todas as diagonais principais 1,2 e 3 é : " , SomaDPT)
+      caso 6
+         Escreval("Obrigado por utilizar meu programa")
+fimalgoritmo
+
+outrocaso
+    escreval("Opção incorreta, tente novamente")
+
+
+
+
+
+
+
+fimescolha
+escreval("Deseja continuar Sim  /  Não?")
+leia(continua)
+se (continua = "sim") entao
+   op <- verdadeiro
+   limpatela
+senao
+   op <- falso
+fimse
+fimenquanto
+escreval()
+Escreval("Obrigado por utilizar meu programa")
+
 
 
 
